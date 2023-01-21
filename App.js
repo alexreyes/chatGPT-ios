@@ -1,20 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { View } from 'react-native';
+import WebView from 'react-native-webview';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View style={{flex: 1, paddingTop: 50, backgroundColor: '#343540'}}>
+      <WebView 
+        source={{uri: 'https://chat.openai.com/chat/'}}
+        style={{ flex: 1, width: '100%', marginBottom: 30, backgroundColor: '#343540'}}
+        bounces={false}
+      />
+
+      <StatusBar hidden={true}/>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
